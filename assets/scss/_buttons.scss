@@ -1,0 +1,33 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-family: var(--medium);
+  background: var(--color);
+  color: var(--white);
+  transition: 0.3s;
+  font-size: 20px;
+  min-width: 240px;
+  padding: 10px 20px;
+  min-height: 56px;
+  &.mini {
+    min-width: 148px;
+    min-height: 42px;
+    font-size: 12px;
+  }
+  &.social {
+    height: 42px;
+    width: 42px;
+    min-height: 42px;
+    min-width: 42px;
+    padding: 0px;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &:hover {
+    background: var(--hover);
+  }
+}

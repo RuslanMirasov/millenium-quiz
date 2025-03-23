@@ -1,0 +1,88 @@
+:root {
+  --regular: 'regular', sans-serif;
+  --medium: 'medium', sans-serif;
+  --bg: #f6f6f6;
+  --color: #118a6e;
+  --hover: #10755e;
+  --white: #ffffff;
+  --black: #000000;
+  --invalid: #ff0000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.12;
+  font-family: var(--regular);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  &:disabled {
+    cursor: auto;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+svg {
+  fill: currentColor;
+}
+
+.color {
+  color: var(--color);
+}

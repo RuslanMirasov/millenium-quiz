@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+  padding: 14px 30px;
+  background: var(--white);
+}
+
+.logo {
+  width: 160px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+}
+
+.link {
+  font-size: 14px;
+  font-family: var(--medium);
+  transition: 0.3s;
+  &:hover {
+    color: var(--color);
+  }
+}

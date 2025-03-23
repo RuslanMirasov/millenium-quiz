@@ -1,0 +1,224 @@
+@font-face {
+  font-family: "regular";
+  src: url("../fonts/graphiklcg-regular.woff2") format("woff2"), url("../fonts/graphiklcg-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "medium";
+  src: url("../fonts/graphiklcg-medium.woff2") format("woff2"), url("../fonts/graphiklcg-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+:root {
+  --regular: "regular", sans-serif;
+  --medium: "medium", sans-serif;
+  --bg: #f6f6f6;
+  --color: #118a6e;
+  --hover: #10755e;
+  --white: #ffffff;
+  --black: #000000;
+  --invalid: #ff0000;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.12;
+  font-family: var(--regular);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  color: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: auto;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+ul,
+ol,
+menu {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+svg {
+  fill: currentColor;
+}
+
+.color {
+  color: var(--color);
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 8px;
+  width: 100%;
+  z-index: 1;
+}
+
+.title {
+  display: block;
+  line-height: 1.12;
+}
+.title.title--h1 {
+  font-size: 64px;
+}
+.title.title--h2 {
+  font-size: 36px;
+}
+.title.title--h3 {
+  font-size: 32px;
+}
+.title.title--h4 {
+  font-size: 26px;
+}
+.title.title--h5 {
+  font-size: 18px;
+}
+.title.title--h6 {
+  font-size: 16px;
+}
+
+.subtitle {
+  display: block;
+  font-size: 24px;
+  line-height: 1.12;
+}
+.subtitle span {
+  display: inline-block;
+  width: auto;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+  padding: 14px 30px;
+  background: var(--white);
+}
+
+.logo {
+  width: 160px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+}
+
+.link {
+  font-size: 14px;
+  font-family: var(--medium);
+  transition: 0.3s;
+}
+.link:hover {
+  color: var(--color);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  font-family: var(--medium);
+  background: var(--color);
+  color: var(--white);
+  transition: 0.3s;
+  font-size: 20px;
+  min-width: 240px;
+  padding: 10px 20px;
+  min-height: 56px;
+}
+.button.mini {
+  min-width: 148px;
+  min-height: 42px;
+  font-size: 12px;
+}
+.button.social {
+  height: 42px;
+  width: 42px;
+  min-height: 42px;
+  min-width: 42px;
+  padding: 0px;
+}
+.button.social svg {
+  width: 20px;
+  height: 20px;
+}
+.button:hover {
+  background: var(--hover);
+}
+
+.input {
+  border-bottom: 1px solid var(--color);
+}
