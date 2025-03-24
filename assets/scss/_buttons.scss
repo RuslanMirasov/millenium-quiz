@@ -6,11 +6,12 @@
   font-family: var(--medium);
   background: var(--color);
   color: var(--white);
-  transition: 0.3s;
+  transition: background 0.3s, opacity 0.3s;
   font-size: 20px;
   min-width: 240px;
   padding: 10px 20px;
   min-height: 56px;
+  user-select: none;
   &.mini {
     min-width: 148px;
     min-height: 42px;
@@ -29,5 +30,32 @@
   }
   &:hover {
     background: var(--hover);
+  }
+
+  &.loading {
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0);
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      border-left: 2px solid var(--white);
+      border-top: 2px solid var(--white);
+      border-right: 2px solid rgba(0, 0, 0, 0);
+      border-bottom: 2px solid rgba(0, 0, 0, 0);
+      animation: rotate 0.3s linear infinite;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
