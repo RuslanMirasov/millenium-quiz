@@ -1,4 +1,5 @@
 import { debounce } from './scripts.js';
+import { scrollToBlock } from './scrollToBlock.js';
 
 const slider = document.querySelector('.swiper');
 
@@ -27,9 +28,19 @@ const swiper = new Swiper(slider, {
   },
 });
 
-const slideNext = e => {
+const onNextBtnClick = e => {
   if (e.target.dataset.js !== 'next') return;
-  swiper.slideNext();
+  slideNext();
+};
+
+export const slideNext = () => {
+  const duration = window.scrollY > 0 ? 600 : 0;
+  const timeout = duration === 600 ? 500 : 0;
+
+  scrollToBlock('.body', duration);
+  setTimeout(() => {
+    swiper.slideNext();
+  }, timeout);
 };
 
 const changeHash = () => {
@@ -48,12 +59,13 @@ const changeHash = () => {
 };
 
 const handleResize = debounce(() => {
-  if (swiper && swiper.update) {
-    swiper.update(); // Пересчитать размеры и позиции
-  }
+  setTimeout(() => {
+    swiper.update();
+  }, 1000);
 }, 300);
 
-slider.addEventListener('click', slideNext);
+slider.addEventListener('click', onNextBtnClick);
 document.addEventListener('DOMContentLoaded', changeHash);
 window.addEventListener('hashchange', changeHash);
 window.addEventListener('resize', handleResize);
+window.addEventListener('orientationchange', handleResize);

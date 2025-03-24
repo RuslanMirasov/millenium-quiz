@@ -12,7 +12,6 @@ const handleInputChange = input => {
   const { name, value, type, checked } = input;
 
   if (type === 'checkbox') {
-    // Множественный выбор (массив)
     if (multiCheckboxFields.includes(name)) {
       if (!quizData[name]) {
         quizData[name] = [];
@@ -49,12 +48,6 @@ const mask = IMask(phone, {
   placeholderChar: '_',
 });
 
-phone.addEventListener('blur', () => {
-  if (mask.unmaskedValue.trim() === '') {
-    mask.value = ''; // Очистим поле полностью
-  }
-});
-
 const validateInput = input => {
   const { name, value, type, checked } = input;
   const parent = input.closest('.inputs');
@@ -82,7 +75,7 @@ const validateInput = input => {
   button.removeAttribute('disabled');
 };
 
-const handleInput = e => {
+const onInputEvent = e => {
   const input = e.currentTarget;
   debouncedInputHandler(input);
 };
@@ -90,7 +83,14 @@ const handleInput = e => {
 const debouncedInputHandler = debounce(input => {
   handleInputChange(input);
   validateInput(input);
-}, 250);
+  console.log(quizData);
+}, 100);
 
-allInputs.forEach(input => input.addEventListener('input', handleInput));
+phone.addEventListener('blur', () => {
+  if (mask.unmaskedValue.trim() === '') {
+    mask.value = '';
+  }
+});
+
+allInputs.forEach(input => input.addEventListener('input', onInputEvent));
 phone.addEventListener('blur', e => e.currentTarget.classList.remove('invalid'));

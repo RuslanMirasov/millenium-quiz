@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./assets/css/styles.min.css" />
     <title>Миллениум</title>
   </head>
-  <body>
+  <body class="body">
     <!--HEADER-->
     <header class="header">
       <a href="./" class="logo">
@@ -28,6 +28,7 @@
           </li>
         </ul>
       </nav>
+      <button class="burger" data-js="burger"><span>Бургер меню</span></button>
     </header>
 
     <!--MAIN-->
@@ -43,6 +44,7 @@
               </div>
 
               <div class="text-content">
+                <img src="./assets/img/slides/1_mobil.webp" alt="" class="heroImage show_inMobil" />
                 <b class="title title--h2">Пройдите опрос за 1 минуту</b>
                 <p class="subtitle">получите купон на любую услугу</p>
               </div>
@@ -64,8 +66,8 @@
               </li>
             </ul>
           </div>
-          <picture class="slideImage">
-            <img src="./assets/img/slides/1.png" alt="" />
+          <picture class="slideImage del_inMobil">
+            <img src="./assets/img/slides/1.webp" alt="" />
           </picture>
         </div>
 
@@ -76,7 +78,7 @@
               <div class="text-content">
                 <h2 class="title title--h2">Вы проживаете в г.Долгопрудный?</h2>
               </div>
-              <fieldset class="fieldset no--margin">
+              <fieldset class="fieldset">
                 <label class="label"><input type="radio" name="city" value="Да" data-js="input" /><span>Да</span></label>
                 <label class="label"><input type="radio" name="city" value="Нет" data-js="input" /><span>Нет</span></label>
               </fieldset>
@@ -84,7 +86,7 @@
             </div>
           </div>
           <picture class="slideImage">
-            <img src="./assets/img/slides/2.png" alt="" />
+            <img src="./assets/img/slides/2.webp" alt="" />
           </picture>
         </div>
 
@@ -103,7 +105,7 @@
             </div>
           </div>
           <picture class="slideImage">
-            <img src="./assets/img/slides/3.png" alt="" />
+            <img src="./assets/img/slides/3.webp" alt="" />
           </picture>
         </div>
 
@@ -139,7 +141,7 @@
             </div>
           </div>
           <picture class="slideImage">
-            <img src="./assets/img/slides/4.png" alt="" />
+            <img src="./assets/img/slides/4.webp" alt="" />
           </picture>
         </div>
 
@@ -148,7 +150,7 @@
           <div class="container">
             <div class="inputs">
               <div class="text-content">
-                <h2 class="title title--h2">Заполните форму, чтобы получить <br />купон 1.000₽ на любую услугу</h2>
+                <h2 class="title title--h2">Заполните форму, чтобы получить <br class="del_inTablet" />купон 1.000₽ на любую услугу</h2>
               </div>
               <fieldset class="fieldset">
                 <label class="label">
@@ -163,7 +165,39 @@
             </div>
           </div>
           <picture class="slideImage">
-            <img src="./assets/img/slides/1.png" alt="" />
+            <img src="./assets/img/slides/1.webp" alt="" />
+          </picture>
+        </div>
+
+        <!--SLIDE SUCCSESS-->
+        <div class="swiper-slide" data-step="succsess">
+          <div class="container">
+            <div class="inputs">
+              <div class="text-content">
+                <h2 class="title title--result">Успешно!</h2>
+                <p class="subtitle">Cпасибо, данные успешно сохранены!</p>
+              </div>
+              <a href="./" class="button">На лавную</a>
+            </div>
+          </div>
+          <picture class="slideImage">
+            <img src="./assets/img/slides/1.webp" alt="" />
+          </picture>
+        </div>
+
+        <!--SLIDE ERROR-->
+        <div class="swiper-slide" data-step="error">
+          <div class="container">
+            <div class="inputs">
+              <div class="text-content">
+                <h2 class="title title--result">Ошибка!</h2>
+                <p class="subtitle">Извините, вы уже оставляли контактный <br />номер для участия в этом предложении ...</p>
+              </div>
+              <a href="./" class="button">На лавную</a>
+            </div>
+          </div>
+          <picture class="slideImage">
+            <img src="./assets/img/slides/1.webp" alt="" />
           </picture>
         </div>
       </div>

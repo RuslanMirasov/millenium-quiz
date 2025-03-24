@@ -1,23 +1,10 @@
 //mongodb+srv://mirasovdev:QWERTmnbvc100@milleniumstyle.q1542.mongodb.net/?retryWrites=true&w=majority&appName=MilleniumStyle
 
 import { quizData } from './form.js';
+import { slideNext } from './slider.js';
 const submitButton = document.querySelector('[data-js="submit"]');
 
-const handleSubmit = async e => {
-  e.currentTarget.classList.add('loading');
-
-  try {
-    const newData = clearData(quizData);
-    const { phone } = newData;
-    console.log(phone);
-  } catch (error) {
-    console.log('Ошибка записи в MongoDB', error);
-  } finally {
-    e.currentTarget.classList.remove('loading');
-  }
-};
-
-const clearData = data => {
+const cleenData = data => {
   const newData = { ...data };
 
   if (Array.isArray(newData.beautyServices)) {
@@ -30,6 +17,22 @@ const clearData = data => {
   }
 
   return newData;
+};
+
+const handleSubmit = async e => {
+  const submitButton = e.currentTarget;
+
+  try {
+    submitButton.classList.add('loading');
+    const newData = cleenData(quizData);
+    const { phone } = newData;
+    console.log(phone);
+    slideNext();
+  } catch (error) {
+    console.log('Ошибка записи в MongoDB', error);
+  } finally {
+    submitButton.classList.remove('loading');
+  }
 };
 
 submitButton.addEventListener('click', handleSubmit);

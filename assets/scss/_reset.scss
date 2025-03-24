@@ -76,3 +76,22 @@ svg {
 .color {
   color: var(--color);
 }
+
+.show_inMobil {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .del_inTablet {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .del_inMobil {
+    display: none;
+  }
+  .show_inMobil {
+    display: block;
+  }
+}
