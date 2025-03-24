@@ -18,11 +18,8 @@ const swiper = new Swiper(slider, {
       const currentSlide = swiper.slides[swiper.activeIndex];
       const step = currentSlide.dataset.step;
 
-      if (step) {
-        const newHash = `#step-${step}`;
-        if (window.location.hash !== newHash) {
-          history.replaceState(null, '', newHash);
-        }
+      if (step && window.location.hash !== `#${step}`) {
+        history.pushState(null, '', `#${step}`);
       }
     },
   },
@@ -43,19 +40,13 @@ export const slideNext = () => {
   }, timeout);
 };
 
-const changeHash = () => {
-  const hash = window.location.hash;
-
-  if (hash.startsWith('#step-')) {
-    const targetStep = hash.split('-')[1];
-    const allSlides = slider.querySelectorAll('.swiper-slide');
-
-    allSlides.forEach((slide, index) => {
-      if (slide.dataset.step === targetStep) {
-        swiper.slideTo(index, 0);
-      }
-    });
-  }
+export const goToSlide = stepName => {
+  const allSlides = slider.querySelectorAll('.swiper-slide');
+  allSlides.forEach((slide, index) => {
+    if (slide.dataset.step === stepName) {
+      swiper.slideTo(index, 0);
+    }
+  });
 };
 
 const handleResize = debounce(() => {
@@ -64,8 +55,15 @@ const handleResize = debounce(() => {
   }, 1000);
 }, 300);
 
+const handleHashChange = () => {
+  const hash = window.location.hash.replace('#', '');
+  if (!hash) return;
+
+  goToSlide(hash);
+};
+
 slider.addEventListener('click', onNextBtnClick);
-document.addEventListener('DOMContentLoaded', changeHash);
-window.addEventListener('hashchange', changeHash);
+document.addEventListener('DOMContentLoaded', handleHashChange);
+window.addEventListener('hashchange', handleHashChange);
 window.addEventListener('resize', handleResize);
 window.addEventListener('orientationchange', handleResize);
