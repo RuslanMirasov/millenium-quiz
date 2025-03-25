@@ -5,7 +5,7 @@ const phone = document.querySelector('[name="phone"]');
 const multiCheckboxFields = ['beautyServices'];
 export const quizData = {
   subject: 'Купон на 1.000₽ на первое посещение салона',
-  agree: true,
+  agree: false,
 };
 
 const handleInputChange = input => {
