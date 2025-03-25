@@ -49,8 +49,9 @@ const mask = IMask(phone, {
 });
 
 const validateInput = input => {
-  const { name, value, type, checked } = input;
+  const { name, value, type } = input;
   const parent = input.closest('.inputs');
+  const agreeInput = parent.querySelector('[name="agree"]');
   const button = parent.querySelector('.button');
 
   if (type === 'tel') {
@@ -72,6 +73,11 @@ const validateInput = input => {
     return;
   }
 
+  if (agreeInput && !agreeInput.checked) {
+    button.setAttribute('disabled', 'disabled');
+    return;
+  }
+
   button.removeAttribute('disabled');
 };
 
@@ -83,7 +89,6 @@ const onInputEvent = e => {
 const debouncedInputHandler = debounce(input => {
   handleInputChange(input);
   validateInput(input);
-  console.log(quizData);
 }, 100);
 
 phone.addEventListener('blur', () => {

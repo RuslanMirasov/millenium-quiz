@@ -25,6 +25,10 @@
     display: inline-block;
     width: auto;
   }
+  &.subtitle--dop {
+    opacity: 0.7;
+    padding-top: 14px;
+  }
 }
 
 // 1440 и выше
@@ -44,6 +48,9 @@
 
   .subtitle {
     font-size: 24px;
+    &.subtitle--dop {
+      font-size: 18px;
+    }
   }
 }
 
@@ -64,6 +71,9 @@
 
   .subtitle {
     font-size: 20px;
+    &.subtitle--dop {
+      font-size: 16px;
+    }
   }
 }
 
@@ -84,11 +94,17 @@
 
   .subtitle {
     font-size: 14px;
+    &.subtitle--dop {
+      font-size: 12px;
+    }
   }
 
   .text-content:first-child {
     .subtitle {
       font-size: 18px;
+      &.subtitle--dop {
+        font-size: 16px;
+      }
     }
   }
 }
@@ -105,8 +121,19 @@
   .text-content:first-child {
     .subtitle {
       font-size: 12.5px;
+      &.subtitle--dop {
+        font-size: 12.5px;
+        padding-top: 5px;
+      }
     }
   }
+}
+
+#month {
+  background: var(--color);
+  color: var(--white);
+  border-radius: 4px;
+  padding: 2px 6px;
 }
 
 /*

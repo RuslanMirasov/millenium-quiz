@@ -82,10 +82,8 @@ svg {
 }
 
 [data-error] {
-  color: #db2626;
-
   @media (min-width: 1400px) {
-    max-width: 500px;
+    max-width: 370px;
   }
   @media (min-width: 1280px) and (max-width: 1399px) {
     max-width: 420px;

@@ -69,7 +69,6 @@
 
   &.label--mini {
     margin-top: -8px;
-    pointer-events: none;
     input[type='radio'],
     input[type='checkbox'] {
       + span {
@@ -80,6 +79,9 @@
           height: 10px;
         }
       }
+    }
+    a {
+      text-decoration: underline;
     }
   }
 }

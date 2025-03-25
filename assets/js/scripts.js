@@ -16,7 +16,6 @@ export const debounce = (func, wait = 200) => {
 const toggleMenu = e => {
   burger.classList.toggle('open');
   navigation.classList.toggle('open');
-  console.log(navigation);
 };
 
 burger.addEventListener('click', toggleMenu);
